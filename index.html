@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter<style>
+            *{
+                margin: 0;
+                padding: 9px;
+                box-sizing: border-box;
+                background-color: whitesmoke;
+            }
+            .container{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-row: 100px;
+                
+                background-color: grey;
+                text-align: center;
+                
+            }
+            #op{
+                background-color: gray;
+            }
+    </style>
+</head>
+<body>
+    <center>   <h1>Unit Converter</h1>  </center>
+   
+    <div class="container">
+        
+        <div>
+            <h1>Enter value in Meter</h1>
+            <input type="tel" id="ip" placeholder="Enter Value" onkeyup="converter()">
+            <h1>Select Unit</h1>
+            <select name="unit" id="option" onchange="coverter()" onclick="converter()" onkeyup="converter()">
+                <option value="mili Meter">Mili Meter</option>
+                <option value="Centi Meter">Centi Meter</option>
+                <option value="Desi Meter">Desi Meter</option>
+                <option value="Meter"> Meter</option>
+                <option value="Deca meter">Deca Meter</option>
+                <option value="Hecto meter">Hecto Meter</option>
+                <option value="Kilo meter">Kilo Meter</option>
+    
+            </select>
+        </div>
+        
+        <div>
+            <h1>Output</h1>
+            <h1  id="op">0</h1>
+        </div>
+        
+    </div>
+    
+</body>
+<script>
+    let ip = document.getElementById('ip'); 
+    let op = document.getElementById('op'); 
+    let option = document.getElementById('option'); 
+
+    function converter()
+    {
+        if(option.value == "mili Meter")
+        {op.innerHTML = ip.value/1000 + " Meter";}
+        else if(option.value == "Centi Meter")
+        {op.innerHTML = (ip.value/100)  + " Meter";}
+        else if(option.value == "Desi Meter")
+        {op.innerHTML = (ip.value/10)  + " Meter";}
+        else if(option.value == "Meter")
+        {op.innerHTML = (ip.value*1)  + " Meter";}
+        else if(option.value == "Deca meter")
+        {op.innerHTML = (ip.value*10)  + " Meter";}
+        else if(option.value == "Hecto meter")
+        {op.innerHTML = (ip.value*100)  + " Meter";}
+        else if(option.value == "Kilo meter")
+        {op.innerHTML = (ip.value*1000)  + " Meter";}
+    }
+    console.log(ip.value);
+</script>
+</html>
